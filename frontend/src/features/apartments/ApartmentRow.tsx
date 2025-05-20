@@ -13,6 +13,7 @@ interface ApartmentProps {
       // Add other properties if necessary
     };
     ownerPhone: string;
+    area: number;
     numberOfMembers: number;
     status: "Business" | "Residential" | "Vacant"; // Adjust the status types if needed
   };
@@ -33,6 +34,7 @@ export default function ApartmentRow({ apartment }: ApartmentProps) {
       <div>{owner?.name || owner?.id}</div> {/* If owner is available, display the name */}
       <div>0{ownerPhone}</div> {/* Display ownerPhone as contact */}
       <div>{numberOfMembers}</div> {/* Display number of residents */}
+      <div>{apartment.area}</div> {/* Display area */}
       <Tag type={statusStyled[status] || "gray"}> {/* Default to "gray" if status doesn't match */}
         {capitalize(status)}
       </Tag>
